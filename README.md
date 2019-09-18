@@ -10,10 +10,13 @@ page.
 
 Say you have a file share and both the client and webserver computer have
 access to it.  This little app allows opening a file on that share from a page
-from the webserver by responding with a `.start-me` file which holds the
-location of the file.  These `.start-me` files will be associated with this
+from the webserver by responding with a `.start-me`-file which holds the
+location of the file.  These `.start-me`-files will be associated with this
 application, when launched they'll start this app which will look it up in the
 share and run `Process.Start` given that location to open it.
+
+To avoid cluttering the users "Downloads" directory, the `.start-me`-file will
+be deleted after calling start on the location.
 
 ## Installation
 
