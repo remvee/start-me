@@ -1,0 +1,36 @@
+version: 2.1
+executors:
+  default:
+    working_directory: /build
+    docker:
+      - image: ubuntu:18.04
+
+
+jobs:
+  build:
+    executor: default
+    steps:
+      - checkout
+      - run:
+         name: Install Pre-requisties
+         command: |
+           export DEBIAN_FRONTEND=noninteractive
+           apt-get update
+           apt-get install -y mono-mcs mono-runtime
+      - run:
+         name: Build Application
+         command: |
+           make
+      - run:
+         name: Test Running Application
+         command: |
+           make test
+      - store_artifacts:
+         path: start-me
+
+
+workflows:
+  version: 2
+  commit:
+    jobs:
+      - build

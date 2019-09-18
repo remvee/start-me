@@ -1,5 +1,7 @@
 # Start-Me
 
+[![CircleCI](https://circleci.com/gh/remvee/start-me.svg?style=svg)](https://circleci.com/gh/remvee/start-me)
+
 A safe-ish alternative to `file:` URLs by providing a basic file association
 handler to allow opening local files from a restricted directory from a web
 page.
