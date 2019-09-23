@@ -13,3 +13,6 @@ test: all
 
 clean:
 	rm -f *.exe
+
+zip: all
+	(cd ..; zip -r start-me.zip start-me -x \*.git\* -x \*.circle\*)
