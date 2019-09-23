@@ -26,6 +26,7 @@ if not %errorLevel% == 0 (
 ) else (
    cls
    echo Start-me should now be successfully installed.
+   echo.
 )
 
 pause
