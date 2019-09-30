@@ -1,5 +1,7 @@
 @echo off
-set exec="%0\..\start_me_handler.exe"
+
+for %%F in (%0) do set dirname=%%~dpF
+set exec="%dirname%start_me_handler.exe"
 
 echo The following line should say "OK"
 %exec% /say-ok
